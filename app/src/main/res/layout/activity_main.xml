@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C49C2310"
     tools:context=".MainActivity">
+    <!--B2A61E13-->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="197dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/hotel"
+        android:contentDescription="@string/it_s_a_first_logo"
+        tools:ignore="VectorDrawableCompat" />
+
+    <Button
+        android:id="@+id/btn_Search"
+        android:layout_width="308dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="250dp"
+        android:onClick="btnOnClickSearch"
+        android:text="@string/search"
+        android:textSize="12pt" />
+
+    <Button
+        android:id="@+id/btn_History"
+        android:layout_width="311dp"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="342dp"
+        android:onClick="btnOnClickHistory"
+        android:text="@string/history"
+        android:textSize="12pt" />
+
+    <Button
+        android:id="@+id/btn_ChekIn"
+        android:layout_width="316dp"
+        android:layout_height="98dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="428dp"
+        android:onClick="btnOnClickCheckIn"
+        android:text="@string/check_in"
+        android:textSize="12pt" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="262dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="177dp"
+        android:gravity="center"
+        android:text="Meet Yours !!"
+        android:textColor="@android:color/background_light"
+        android:textSize="30dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

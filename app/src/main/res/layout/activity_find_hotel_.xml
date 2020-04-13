@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindHotel_Activity">
+
+    <Spinner
+        android:id="@+id/spn_city"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerInParent="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="269dp"
+        android:entries="@array/City_Spinner" />
+
+    <Spinner
+        android:id="@+id/spn_country"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spn_PriceRange"
+        android:layout_alignEnd="@+id/spn_PriceRange"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginEnd="0dp"
+        android:entries="@array/country_Spinner"
+        android:gravity="center" />
+
+    <Spinner
+        android:id="@+id/spn_PriceRange"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="312dp"
+        android:entries="@array/Price_Spinner"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/txt_COUNTRY3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="316dp"
+        android:text="PRICE RANGE" />
+
+    <TextView
+        android:id="@+id/txt_COUNTRY2"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="272dp"
+        android:text="City" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="411dp"
+        android:layout_height="201dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="10dp"
+        app:srcCompat="@drawable/logo1" />
+
+    <TextView
+        android:id="@+id/txt_COUNTRY"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="223dp"
+        android:text="COUNTRY" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+
+        android:orientation="horizontal">
+
+
+        <!-- android:onClick="OnRadioButtonClick"-->
+
+        <!-- android:onClick="OnRadioButtonClick"-->
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_hotelListResult"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="6dp"
+        android:text="Show Hotel List Result" />
+
+    <Switch
+        android:id="@+id/swtDeleveryServes"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="119dp"
+        android:text="With Star Services"
+        android:textSize="6pt" />
+
+    <RadioGroup
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="174dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radb_Vacation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/vacation"
+            android:textSize="6pt" />
+
+        <RadioButton
+            android:id="@+id/radb_Business"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="113dp"
+            android:layout_marginBottom="0dp"
+            android:text="Business"
+            android:textSize="6pt" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtServices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="182dp"
+        android:text="SERVICES" />
+
+    <!--android:onClick="OnClickStarServices"-->
+
+
+
+</RelativeLayout>

@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void btnOnClickCheckIn(View view) {
-        //startActivity(new Intent(this,FindHotel_Activity.class));
+        //startActivity(new Intent(this,HistoryListActivity.class));
        }
 
     public void btnOnClickHistory(View view) {
-        //startActivity(new Intent(this,FindHotel_Activity.class));
+        //startActivity(new Intent(this,CheckInListActivity.class));
     }
 
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingActivity">
+
+    <Spinner
+        android:id="@+id/spn_Time2"
+        android:layout_width="113dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="305dp"
+        android:entries="@array/spn_Time" />
+
+    <TextView
+        android:id="@+id/txt_HotelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="149dp"
+        android:text="Show Hotel Name ..."
+        android:gravity="center"
+        android:textSize="11pt" />
+
+    <EditText
+        android:id="@+id/edt_CustomerName"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="194dp"
+        android:ems="10"
+        android:hint="Customer Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edt_CceckInDATE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="250dp"
+        android:ems="10"
+        android:hint="CheckInDate"
+        android:inputType="date" />
+
+    <Spinner
+        android:id="@+id/spn_Time1"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="257dp"
+        android:layout_marginTop="253dp"
+        android:entries="@array/spn_Time" />
+
+    <EditText
+        android:id="@+id/edt_CheckOutDate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="303dp"
+        android:ems="10"
+        android:hint="CheckOutDate"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/btn_Booking"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="161dp"
+        android:text="BOOKING" />
+
+
+</RelativeLayout>

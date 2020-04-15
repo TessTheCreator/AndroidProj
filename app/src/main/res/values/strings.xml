@@ -1,3 +1,59 @@
 <resources>
     <string name="app_name">HotelApp</string>
+    <string name="history">History</string>
+    <string name="check_in">Check In</string>
+    <string name="search">Search</string>
+    <string name="it_s_a_first_logo">It\'s a First logo</string>
+    <string name="vacation">Vacation</string>
+    <string name="hotel_search_result">Hotel Search Result</string>
+    <string name="with_star_services">With Star Services</string>
+    <string name="business">Business</string>
+    <string name="services">SERVICES</string>
+    <string name="country">COUNTRY</string>
+    <string name="city">City</string>
+    <string-array name="country_Spinner">
+        <item>Palestine</item>
+        <item>Saudi Arabia</item>
+        <item>Morocco</item>
+        <item>Jordan</item>
+        <item>Egypt</item>
+    </string-array>
+    <string-array name="City_Spinner">
+        <item>Ramallah,Palestine </item>
+        <item>Mecca Region,Saudi Arabia </item>
+        <item>Riyadh Region,Saudi Arabia </item>
+        <item>Seoul,Morocco </item>
+        <item>Dead Sea,Jordan </item>
+        <item>Sharm el-Sheikh,Egypt </item>
+    </string-array>
+    <string-array name="Price_Spinner">
+        <item> 200$</item>
+        <item>500$</item>
+        <item>800$</item>
+        <item>1200$</item>
+        <item>1500$</item>
+    </string-array>
+    <string-array name="hotel_ImediatDetails_list">
+        <item>BOOKING</item>
+        <item>SERVICES</item>
+        <item>CHICK_IN</item>
+    </string-array>
+    <string-array name="spn_Time">
+        <item>8:00am</item>
+        <item>11:00am</item>
+        <item>2:00pm</item>
+        <item>5:00pm</item>
+        <item>7:00pm</item>
+    </string-array>
+    <string-array name="spn_TypeServices">
+        <item>Vacation </item>
+        <item>Business </item>
+    </string-array>
+    <string-array name="spn_Items">
+        <item>Single </item>
+        <item>Double </item>
+        <item>Family </item>
+    </string-array>
+
+
 </resources>

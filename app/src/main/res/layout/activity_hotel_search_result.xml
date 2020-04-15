@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    android:orientation="vertical"
+    android:id="@+id/main_hotel"
+    tools:context=".HotelSearchResult">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C49C2310"
+        android:gravity="center"
+        android:text="LIST OF HOTEL"
+        android:textColor="@android:color/white"
+        android:textSize="14pt" />
+    <!--Should loaded in run Time have nameOfHotel -->
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_HotelRes"/>
+       <!-- android:entries="@array/ListOfHotel"/>-->
+
+</LinearLayout>

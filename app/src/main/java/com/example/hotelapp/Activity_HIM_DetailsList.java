@@ -21,7 +21,7 @@ public class Activity_HIM_DetailsList extends AppCompatActivity {
         setContentView(R.layout.activity__h_i_m__details_list);
         //Todo:Get Id from HotelSearchResult
         //Intent intent =getIntent();
-        // int id = (int) intent.getExtras().get("Hotel_id");//we get hotel index in our object class Hotel..
+       // int id = (int) intent.getExtras().get("Hotel_id");//we get hotel index in our object class Hotel..
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         ListView HImediatDetails_list = findViewById(R.id.HImediatDetails_list);

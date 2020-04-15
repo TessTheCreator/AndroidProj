@@ -35,7 +35,7 @@ public class HotelSearchResult extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent =new Intent(HotelSearchResult.this,Activity_HIM_DetailsList.class);
-                //intent.putExtra("Hotel_id",(int)id);//or position Where your data array Object order
+                intent.putExtra("Hotel_id",(int)id);//or position
                 startActivity(intent);
             }
         };

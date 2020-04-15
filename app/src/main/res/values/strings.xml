@@ -27,7 +27,7 @@
         <item>Sharm el-Sheikh,Egypt </item>
     </string-array>
     <string-array name="Price_Spinner">
-        <item> 200$</item>
+        <item>200$</item>
         <item>500$</item>
         <item>800$</item>
         <item>1200$</item>

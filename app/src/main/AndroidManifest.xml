@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HistoryDetailsActivity"></activity>
+        <activity android:name=".HistorySummaryDetail"></activity>
+        <activity android:name=".ServesSummaryDetails" />
+        <activity android:name=".CheckIn_MainActivity" />
+        <activity android:name=".History_MainActivity" />
+        <activity android:name=".HistoryDetailsActivity" />
         <activity android:name=".ServiceActivity" />
         <activity android:name=".BookingActivity" />
         <activity android:name=".Activity_HIM_DetailsList" />

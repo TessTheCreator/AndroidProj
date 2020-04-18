@@ -9,9 +9,7 @@ public class Hotel {
 
     int stars;
 
-    double maxPrice;
-
-    double minPrice;
+    public double price;
 
     String country;
 
@@ -20,11 +18,10 @@ public class Hotel {
 
 
 
-    public Hotel(String name, int stars, double maxPrice, double minPrice, String country) {
+    public Hotel(String name, int stars, double price, String country) {
         this.name = name;
         this.stars = stars;
-        this.maxPrice = maxPrice;
-        this.minPrice = minPrice;
+    this.price=price;
         this.country = country;
     }
 
@@ -61,21 +58,14 @@ public class Hotel {
         this.stars = stars;
     }
 
-    public double getMaxPrice() {
-        return maxPrice;
+    public double price() {
+        return price;
     }
 
-    public void setMaxPrice(double maxPrice) {
-        this.maxPrice = maxPrice;
+    public void price(double price) {
+        this.price = price;
     }
 
-    public double getMinPrice() {
-        return minPrice;
-    }
-
-    public void setMinPrice(double minPrice) {
-        this.minPrice = minPrice;
-    }
 
     public String getCountry() {
         return country;
@@ -87,8 +77,6 @@ public class Hotel {
 
     @Override
     public String toString() {
-        return "Hotel{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Hotel: "+ name + "                      Price:    "+price;
     }
 }

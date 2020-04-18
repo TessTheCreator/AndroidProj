@@ -9,7 +9,7 @@ public class Hotel {
 
     int stars;
 
-    double price;
+    public double price;
 
     String country;
 
@@ -77,8 +77,6 @@ public class Hotel {
 
     @Override
     public String toString() {
-        return "Hotel{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Hotel: "+ name + "                      Price:    "+price;
     }
 }

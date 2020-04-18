@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Hotel {
-
-
     String name;
 
     int stars;
@@ -21,7 +19,18 @@ public class Hotel {
 
     List<Room> rooms= new ArrayList<Room>();
 
-    List<service> services= new ArrayList<service>();
+
+
+    public Hotel(String name, int stars, double maxPrice, double minPrice, String country) {
+        this.name = name;
+        this.stars = stars;
+        this.maxPrice = maxPrice;
+        this.minPrice = minPrice;
+        this.country = country;
+        initilaize();;
+    }
+
+
 
 
     //generates 180 rooms with random price and status of being occupied/full
@@ -63,21 +72,6 @@ public class Hotel {
         temp.reserved=false;
         rooms.set(roomIndex,temp);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

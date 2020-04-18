@@ -2,20 +2,20 @@ package com.example.hotelapp.Models;
 
 public class Visit {
     String hotelName;
-    int hotelNumber;
+    int roomNumber;
 
 
 
-    public Visit(String hotelName, int number){
+    public Visit(String hotelName, int roomNumber){
         this.hotelName=hotelName;
-        this.hotelNumber=number;
+        this.roomNumber=roomNumber;
 
     }
     @Override
     public String toString() {
         return "Visit{" +
                 "hotelName='" + hotelName + '\'' +
-                ", hotelNumber=" + hotelNumber +
+                ", roomNumber=" + roomNumber +
                 '}';
     }
 
@@ -28,10 +28,10 @@ public class Visit {
     }
 
     public int getHotelNumber() {
-        return hotelNumber;
+        return roomNumber;
     }
 
-    public void setHotelNumber(int hotelNumber) {
-        this.hotelNumber = hotelNumber;
+    public void setHotelNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 }

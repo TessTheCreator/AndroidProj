@@ -18,6 +18,13 @@
         <item>Jordan</item>
         <item>Egypt</item>
     </string-array>
+    <string-array name="stars_Spinner">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
     <string-array name="City_Spinner">
         <item>Ramallah,Palestine </item>
         <item>Mecca Region,Saudi Arabia </item>

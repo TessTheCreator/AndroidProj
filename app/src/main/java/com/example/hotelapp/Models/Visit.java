@@ -2,22 +2,6 @@ package com.example.hotelapp.Models;
 
 public class Visit {
     String hotelName;
-    int roomNumber;
-
-
-
-    public Visit(String hotelName, int roomNumber){
-        this.hotelName=hotelName;
-        this.roomNumber=roomNumber;
-
-    }
-    @Override
-    public String toString() {
-        return "Visit{" +
-                "hotelName='" + hotelName + '\'' +
-                ", roomNumber=" + roomNumber +
-                '}';
-    }
 
     public String getHotelName() {
         return hotelName;
@@ -27,11 +11,39 @@ public class Visit {
         this.hotelName = hotelName;
     }
 
-    public int getHotelNumber() {
-        return roomNumber;
+    public double getCost() {
+        return cost;
     }
 
-    public void setHotelNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    double cost;
+    int days;
+
+
+    public Visit(String hotelName, int days, double cost) {
+
+
+    }
+
+
+    @Override
+    public String toString() {
+        return "Visit{" +
+                "hotelName='" + hotelName + '\'' +
+                ", cost=" + cost +
+                ", days=" + days +
+                '}';
     }
 }
+

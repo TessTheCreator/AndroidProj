@@ -15,9 +15,8 @@ public class Hotel {
 
     String country;
 
-    String Type;
 
-    List<Room> rooms= new ArrayList<Room>();
+
 
 
 
@@ -27,51 +26,14 @@ public class Hotel {
         this.maxPrice = maxPrice;
         this.minPrice = minPrice;
         this.country = country;
-        initilaize();;
     }
 
 
 
 
     //generates 180 rooms with random price and status of being occupied/full
-    public void initilaize(){
-            for(int i=0;i<180;i++){
-
-                Random rand = new Random();
-
-                int flag = rand.nextInt((1 - 0) + 1) + 1;
-
-                Random rand2 = new Random();
 
 
-                double price = 100.0 + (1000.0 - 100.0) * rand2 .nextDouble();
-                if(flag==0){
-
-                   Room newRoom=new Room(i,price,false);
-                   rooms.add(newRoom);
-
-                }
-
-                    else {
-                    Room newRoom=new Room(i,price,true);
-                    rooms.add(newRoom);
-
-
-                }
-
-            }
-    }
-
-    public void reserveRoom(int roomIndex){
-        Room temp=rooms.get(roomIndex);
-        temp.reserved=true;
-        rooms.set(roomIndex,temp);
-    }
-    public void EmptyARoom(int roomIndex){
-        Room temp=rooms.get(roomIndex);
-        temp.reserved=false;
-        rooms.set(roomIndex,temp);
-    }
 
 
 
@@ -123,21 +85,10 @@ public class Hotel {
         this.country = country;
     }
 
-    public String getType() {
-        return Type;
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "name='" + name + '\'' +
+                '}';
     }
-
-    public void setType(String type) {
-        Type = type;
-    }
-
-    public List<Room> getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
-    }
-
-
 }

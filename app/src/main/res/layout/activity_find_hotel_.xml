@@ -33,39 +33,57 @@
         android:text="PRICE RANGE"
         android:textColor="@android:color/black" />
 
-    <Spinner
-        android:id="@+id/spn_PriceRange"
-        android:layout_width="166dp"
+    <EditText
+        android:id="@+id/min"
+        android:layout_width="50dp"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="141dp"
-        android:layout_marginTop="417dp"
-        android:entries="@array/Price_Spinner" />
-
-    <TextView
-        android:id="@+id/txt_city"
-        android:layout_width="66dp"
+        android:layout_marginTop="415dp"
+        android:inputType="number"
+        android:hint="Min"
+   />
+    <EditText
+        android:id="@+id/max"
+        android:layout_width="50dp"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="327dp"
-        android:text="@string/city"
-        android:textColor="@android:color/black" />
+        android:hint="Max"
+        android:layout_toRightOf="@id/min"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="415dp"
+        android:inputType="number"
+
+        />
 
     <Spinner
-        android:id="@+id/spn_city"
-        android:layout_width="214dp"
+
+        android:id="@+id/spn_stars"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="322dp"
-        android:entries="@array/City_Spinner" />
+       android:layout_toRightOf="@id/stars_Text"
+        android:layout_below="@id/txt_PriceRange"
+        android:layout_marginTop="40dp"
+        android:entries="@array/stars_Spinner"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:id="@+id/stars_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT HOTEL RATING:"
+        android:layout_below="@id/txt_PriceRange"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@android:color/black" />
+
+
+
+
 
     <TextView
         android:id="@+id/txt_COUNTRY"
@@ -82,8 +100,6 @@
         android:id="@+id/spn_country"
         android:layout_width="168dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/spn_PriceRange"
-        android:layout_alignEnd="@+id/spn_PriceRange"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="2dp"
@@ -91,61 +107,6 @@
         android:layout_marginEnd="-2dp"
         android:entries="@array/country_Spinner"
         android:gravity="center" />
-
-    <TextView
-        android:id="@+id/txtServices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="172dp"
-        android:text="@string/services"
-        android:textColor="@android:color/black" />
-
-    <RadioGroup
-        android:id="@+id/radG_Service"
-        android:layout_width="211dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="168dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radb_Vacation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="0dp"
-            android:text="@string/vacation"
-            android:textSize="6pt" />
-        <!-- android:onClick="OnRadioButtonClick"-->
-
-        <!-- android:onClick="OnRadioButtonClick"-->
-        <RadioButton
-            android:id="@+id/radb_Business"
-            android:layout_width="124dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="113dp"
-            android:layout_marginBottom="0dp"
-            android:text="@string/business"
-            android:textSize="6pt" />
-    </RadioGroup>
-
-    <Switch
-        android:id="@+id/swtStarServes"
-        android:layout_width="168dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="88dp"
-        android:text="@string/with_star_services"
-        android:textSize="6pt" />
 
     <Button
         android:id="@+id/btn_hotelListResult"

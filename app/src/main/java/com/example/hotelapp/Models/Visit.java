@@ -2,6 +2,8 @@ package com.example.hotelapp.Models;
 
 public class Visit {
     String hotelName;
+    double cost;
+    int days;
 
     public String getHotelName() {
         return hotelName;
@@ -27,11 +29,9 @@ public class Visit {
         this.days = days;
     }
 
-    double cost;
-    int days;
 
 
-    public Visit(String hotelName, int days, double cost) {
+    public Visit(String hotelName) {
 
 
     }

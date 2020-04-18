@@ -18,7 +18,7 @@
 
         public void AddToHistory(String hotelName, int roomIndex ){
 
-            Visit newVisit= new Visit(hotelName,roomIndex);
+            Visit newVisit= new Visit(hotelName);
             visit.add(newVisit);
 
 

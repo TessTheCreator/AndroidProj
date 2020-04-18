@@ -16,9 +16,9 @@
         public History() {
         }
 
-        public void AddToHistory(String hotelName, int roomIndex ){
+        public void AddToHistory(String hotelName, double cost, int day ){
 
-            Visit newVisit= new Visit(hotelName,roomIndex);
+            Visit newVisit= new Visit(hotelName, day,cost);
             visit.add(newVisit);
 
 

@@ -73,8 +73,7 @@ public class HotelSearchResult extends AppCompatActivity {
 
 
     private String[] search(String country, int minValue,int maxValue,int stars){
-
-
+        for(int i=0,i<hotelList.size();i++)
 
 
     }
@@ -82,17 +81,32 @@ public class HotelSearchResult extends AppCompatActivity {
     private void populateHotels(){
 
         hotelList=new ArrayList<Hotel>();
-        hotelList.add(new Hotel("City inn",1,1000,100,"Palestine"));
-        hotelList.add(new Hotel("City inn",4,10000,100,"Morocco"));
-        hotelList.add(new Hotel("City inn",3,5000,100," Saudi Arabia"));
-        hotelList.add(new Hotel("City inn",2,3000,100,"Palestine"));
-        hotelList.add(new Hotel("City inn",3,2000,100,"Palestine"));
-        hotelList.add(new Hotel("City inn",1,100,100,"Palestine"));
-        hotelList.add(new Hotel("City inn",4,50,100,"Palestine"));
-       </item>
-        <item>  </item>
-        <item>Jordan</item>
-        <item>Egypt
+        hotelList.add(new Hotel("City inn",1,1000,"Palestine"));
+        hotelList.add(new Hotel("Grand park",4,10000,"Morocco"));
+        hotelList.add(new Hotel("Move n pick",3,5000,"Saudi Arabia"));
+        hotelList.add(new Hotel("CMarriott",2,3000,"Egypt"));
+        hotelList.add(new Hotel("Hyatt",3,2000,"Jordan"));
+        hotelList.add(new Hotel("Mandarin Oriental",1,100,"Palestine"));
+        hotelList.add(new Hotel("Kings Inn",4,50,"Palestine"));
+        hotelList.add(new Hotel("Roadside",3,500,"Jordan"));
+        hotelList.add(new Hotel("Quaint Mote",4,400,"Jordan"));
+        hotelList.add(new Hotel("City inn",5,700,"Jordan"));
+        hotelList.add(new Hotel("Better And Better",1,900,"Jordan"));
+        hotelList.add(new Hotel("The Worldly Traveler",2,5000,"Egypt"));
+        hotelList.add(new Hotel("City inn",4,1000,"Egypt"));
+        hotelList.add(new Hotel("City inn",1,2000,"Egypt"));
+        hotelList.add(new Hotel("City inn",3,3000,"Egypt"));
+        hotelList.add(new Hotel("City inn",4,90000,"Morocco"));
+        hotelList.add(new Hotel("City inn",4,400,"Morocco"));
+
+        hotelList.add(new Hotel("City inn",4,10000,"Morocco"));
+        hotelList.add(new Hotel("City inn",1,800,"Saudi Arabia"));
+        hotelList.add(new Hotel("City inn",4,10000,"Morocco"));
+        hotelList.add(new Hotel("City inn",2,100,"Saudi Arabia"));
+        hotelList.add(new Hotel("City inn",4,10000,"Morocco"));
+        hotelList.add(new Hotel("City inn",5,5400,"Saudi Arabia"));
+
+
 
 
 

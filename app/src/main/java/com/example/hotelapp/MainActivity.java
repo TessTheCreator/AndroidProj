@@ -24,10 +24,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnOnClickCheckIn(View view) {
-        startActivity(new Intent(this,CheckIn_MainActivity.class));
+        startActivity(new Intent(this,ServicesMainActivity.class));
        }
-
-
 
 
 }

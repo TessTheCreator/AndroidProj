@@ -14,4 +14,8 @@ public class HistoryDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history_details);
         Intent intent =getIntent();
     }
+
+
+
+
 }

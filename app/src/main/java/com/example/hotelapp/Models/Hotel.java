@@ -58,11 +58,11 @@ public class Hotel {
         this.stars = stars;
     }
 
-    public double price() {
+    public double getPrice() {
         return price;
     }
 
-    public void price(double price) {
+    public void setPriceprice(double price) {
         this.price = price;
     }
 

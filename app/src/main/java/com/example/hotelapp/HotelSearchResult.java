@@ -23,6 +23,9 @@ public class HotelSearchResult extends AppCompatActivity {
         int minValue;
         int stars;
         private String[] HotelList;
+
+        private Double[] numbersResult;
+        private String[] outputList;
         boolean empty=true;
 
 
@@ -42,7 +45,7 @@ public class HotelSearchResult extends AppCompatActivity {
 
 
 
-            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, HotelList);
+            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, outputList);
             ListView list_HotelRes = findViewById(R.id.list_HotelRes);
             list_HotelRes.setAdapter(listAdapter);//now you connected listView in runTime
 
@@ -50,8 +53,11 @@ public class HotelSearchResult extends AppCompatActivity {
             AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(HotelSearchResult.this, Activity_HIM_DetailsList.class);
-                    intent.putExtra("Hotel_id", (int) id);//or position
+                    Intent intent = new Intent(HotelSearchResult.this,BookingActivity.class);
+                    String name = (String) parent.getItemAtPosition(position);
+                    double price=numbersResult[position];
+                    intent.putExtra("Hotel",name);//or position
+                    intent.putExtra("price",price);
                     startActivity(intent);
                 }
             };
@@ -74,17 +80,23 @@ public class HotelSearchResult extends AppCompatActivity {
 
     private String[] search(String country, int minValue,int maxValue,int stars){
                 List<String> results=new ArrayList<String>();
+                List<Double> results2=new ArrayList<Double>();
+                List<String> output=new ArrayList<String>();
                 String[] StringResults;
             for(int i=0;i<hotelList.size();i++){
                Hotel temp= hotelList.get(i);
                 if(country.matches(temp.getCountry() ) &&  (temp.price>=minValue )&& (temp.price<=maxValue )   && stars==temp.getStars()){
-                    results.add(temp.toString());
+                    results.add(temp.getName());
+                   results2.add(temp.getPrice());
+                   output.add(temp.getName()+"                   "+"Price per night: "+temp.getPrice());
                     empty=false;
 
                 }
 
             }
-        StringResults = new String[results.size()];
+            StringResults = new String[results.size()];
+            numbersResult=new Double[results2.size()];
+            outputList=new String[output.size()];
 
         if(results.isEmpty()==true)
             {
@@ -93,6 +105,9 @@ public class HotelSearchResult extends AppCompatActivity {
             else {
                 for (int j = 0; j < results.size(); j++) {
                     StringResults[j] = results.get(j);
+                   this.numbersResult[j]= results2.get(j);
+                   outputList[j]=output.get(j);
+
                 }
             }
         return StringResults;

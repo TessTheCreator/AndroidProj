@@ -10,7 +10,7 @@ public class HistorySummaryDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history_summary_detail);
+        setContentView(R.layout.activity_history_details);
         Intent intent=getIntent();
         int id = (int) intent.getExtras().get("HotelVisetFlow_id");
 

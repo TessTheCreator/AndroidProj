@@ -17,10 +17,10 @@ public class BookingActivity extends AppCompatActivity {
     TextView hotelname;
     TextView totalPrice;
     EditText daysInput;
-    String name;
-    double price;
-    double cost;
-    int days;
+    String name; //the selected hotel name
+    double price;//price per night
+    double cost;// price* day = total cost
+    int days; // number of days to stay in
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,7 @@ public class BookingActivity extends AppCompatActivity {
         hotelname.setText(name);
         daysInput=findViewById(R.id.numberOfDays);
         totalPrice=findViewById(R.id.totalPrice);
-        daysInput.addTextChangedListener(new TextWatcher() {
+        daysInput.addTextChangedListener(new TextWatcher() {  // calculates the cost from number of days * price per day
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -62,6 +62,8 @@ public class BookingActivity extends AppCompatActivity {
 
     }
 
+
+    //put code for placing into database here
     public void btnOnClickHotelSearchResult(View view) {
 
 

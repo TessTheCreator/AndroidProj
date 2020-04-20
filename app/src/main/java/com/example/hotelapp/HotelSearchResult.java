@@ -54,9 +54,9 @@ public class HotelSearchResult extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(HotelSearchResult.this,BookingActivity.class);
-                    String name = (String) parent.getItemAtPosition(position);
                     double price=numbersResult[position];
-                    intent.putExtra("Hotel",name);//or position
+                    String name=HotelList[position];
+                    intent.putExtra("Hotel",name);
                     intent.putExtra("price",price);
                     startActivity(intent);
                 }

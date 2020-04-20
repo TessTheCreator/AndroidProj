@@ -4,6 +4,12 @@ public class Visit {
     String hotelName;
     double cost;
     int days;
+    public Visit(String hotelName, int day, double cost) {
+
+    this.cost=cost;
+    this.days=day;
+    this.hotelName=hotelName;
+    }
 
     public String getHotelName() {
         return hotelName;
@@ -31,10 +37,7 @@ public class Visit {
 
 
 
-    public Visit(String hotelName) {
 
-
-    }
 
 
     @Override

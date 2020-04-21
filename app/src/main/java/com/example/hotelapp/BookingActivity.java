@@ -3,6 +3,7 @@ package com.example.hotelapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,14 +14,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hotelapp.Models.Visit;
 import com.example.hotelapp.Models.VisitList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.w3c.dom.Text;
 
-public class BookingActivity extends AppCompatActivity {
-    Button booking;
-    VisitList list=new VisitList();
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
+public class BookingActivity extends AppCompatActivity {
+
+    VisitList b = new VisitList();
+    ArrayList<Visit> bHistory = b.getVisit();
+
+    Button booking;
     TextView hotelname;
     TextView totalPrice;
     EditText daysInput;
@@ -82,9 +91,38 @@ public class BookingActivity extends AppCompatActivity {
 
 
 
+
+
         }
         else {
             DisplayToast("Please put a number of days!");
         }
     }
+
+    private void saveData(){
+        loadData();
+        bHistory.add(new Visit(name, days, cost));
+        SharedPreferences s = getSharedPreferences("booking", MODE_PRIVATE);
+        SharedPreferences.Editor editor = s.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(bHistory);
+        editor.putString("list", json);
+        editor.apply();
+
+        DisplayToast("Booked!");
+    }
+
+    private void loadData(){
+        SharedPreferences s = getSharedPreferences("booking", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = s.getString("list", null);
+        Type type = new TypeToken<ArrayList<Visit>>() {}.getType();
+        ArrayList<Visit> load = gson.fromJson(json, type);
+
+        bHistory = load;
+
+
+    }
+
+
 }

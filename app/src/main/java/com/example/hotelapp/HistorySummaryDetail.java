@@ -9,13 +9,14 @@ import android.widget.TextView;
 import com.example.hotelapp.Models.Visit;
 
 public class HistorySummaryDetail extends AppCompatActivity {
-TextView details=findViewById(R.id.DisplayCheckInMessage);
+TextView details;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String info="";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_details);
         Intent intent=getIntent();
+        details=findViewById(R.id.DisplayCheckInMessage);
         Visit selected=(Visit)intent.getSerializableExtra("visit");
 
 

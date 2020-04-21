@@ -49,7 +49,7 @@ public class History_MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(History_MainActivity.this, HistorySummaryDetail.class);
-                    //   intent.putExtra("visit", bHistory.get(position));//or position Where your data array Object order
+                      intent.putExtra("visit", bHistory.get(position));//or position Where your data array Object order
                     startActivity(intent);
                 }
             };
@@ -79,7 +79,7 @@ public class History_MainActivity extends AppCompatActivity {
         String[] v = new String[size];
 
         for(int i = 0; i < size; i++){
-            v[i] = bHistory.get(i).toString();
+            v[i] = bHistory.get(i).getHotelName();
            // Print(b.getVisit().toString());
         }
         return v;

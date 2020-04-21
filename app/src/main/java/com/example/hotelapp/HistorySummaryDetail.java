@@ -17,6 +17,12 @@ TextView details=findViewById(R.id.DisplayCheckInMessage);
         setContentView(R.layout.activity_history_details);
         Intent intent=getIntent();
         Visit selected=(Visit)intent.getSerializableExtra("visit");
+
+
+
+
+
+
         if(selected.getDays()>1) {
             info = "You stayed at hotel:      " + selected.getHotelName() + "\n"
                     + "For " + selected.getDays() + "Days\n" +

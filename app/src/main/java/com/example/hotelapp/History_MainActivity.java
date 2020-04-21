@@ -34,7 +34,7 @@ public class History_MainActivity extends AppCompatActivity {
 
 
         loadData();
-        if(!b.getVisit().isEmpty()) {
+        if(!bHistory.isEmpty()) {
             String[] visitList = getAllVisit();
 
             Intent intent = getIntent();
@@ -68,12 +68,12 @@ public class History_MainActivity extends AppCompatActivity {
         bHistory = load;
 
 
+
         //Print(bHistory.toString());
         //txt.setText(bHistory.toString());
     }
 
     public String[] getAllVisit(){
-        loadData();
         //Print(b.toString());
         int size = bHistory.size();
         String[] v = new String[size];

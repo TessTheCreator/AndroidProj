@@ -25,7 +25,6 @@ import java.util.List;
 public class CheckIn_MainActivity extends AppCompatActivity {
 
     serviceList b = new serviceList();
-    ArrayList<service> bHistory = b.getService();
 
     List<service> serviceList=new ArrayList<service>();
 
@@ -33,14 +32,18 @@ public class CheckIn_MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in__main);
         Intent intent =getIntent();
         String Message1 =intent.getStringExtra("showList");
-
-        ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,StringList);
-        ListView list_ServiceFlow  = findViewById(R.id.list_ServiceFlow);
-        list_ServiceFlow.setAdapter(listAdapter);//now you connected listView in runTime
+        if(!serviceList.isEmpty()) {
+            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, StringList);
+            ListView list_ServiceFlow = findViewById(R.id.list_ServiceFlow);
+            list_ServiceFlow.setAdapter(listAdapter);//now you connected listView in runTime
+        }
 
 
   }
@@ -61,7 +64,6 @@ public class CheckIn_MainActivity extends AppCompatActivity {
         Type type = new TypeToken<ArrayList<service>>() {}.getType();
         ArrayList<service> load = gson.fromJson(json, type);
 
-        bHistory = load;
 
 
     }

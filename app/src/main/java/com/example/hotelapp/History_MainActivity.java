@@ -32,25 +32,30 @@ public class History_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history__main);
 
-        String[] visitList = getAllVisit();
 
-        Intent intent =getIntent();
+        loadData();
+        if(!b.getVisit().isEmpty()) {
+            String[] visitList = getAllVisit();
 
-        ListView list_HistoryVisited =findViewById(R.id.list_HistoryVisited);
-        ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, visitList);
-        list_HistoryVisited.setAdapter(listAdapter);//now you connected listView in runTime
+            Intent intent = getIntent();
 
-        //Define Event Handler for this List
-        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent =new Intent(History_MainActivity.this,HistorySummaryDetail.class);
-             //   intent.putExtra("visit", bHistory.get(position));//or position Where your data array Object order
-                startActivity(intent);
-            }
-        };
-        
-        list_HistoryVisited.setOnItemClickListener(itemClickListener);
+
+            ListView list_HistoryVisited = findViewById(R.id.list_HistoryVisited);
+            ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, visitList);
+            list_HistoryVisited.setAdapter(listAdapter);//now you connected listView in runTime
+
+            //Define Event Handler for this List
+            AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(History_MainActivity.this, HistorySummaryDetail.class);
+                    //   intent.putExtra("visit", bHistory.get(position));//or position Where your data array Object order
+                    startActivity(intent);
+                }
+            };
+
+            list_HistoryVisited.setOnItemClickListener(itemClickListener);
+        }
     }
 
     private void loadData(){

@@ -28,7 +28,7 @@ import java.util.List;
 public class ServiceActivity extends AppCompatActivity {
     serviceList b = new serviceList();
     ArrayList<service> bHistory = b.getService();
-
+    int selectedIndex;
     TextView servicePrice;
     List<service> serviceList;
     private Spinner typeOfServices;
@@ -48,6 +48,7 @@ public class ServiceActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 servicePrice.setText("Cost: "+serviceList.get(position).getServiceCost());
+                selectedIndex=position;
             }
 
             @Override
@@ -64,7 +65,7 @@ public class ServiceActivity extends AppCompatActivity {
         service selectedService=serviceList.get(index);
         DisplayToast("Service ordered!");
           //save Data in Data Base..
-            saveData();
+            saveData(index);
 
 
       }
@@ -89,20 +90,20 @@ public class ServiceActivity extends AppCompatActivity {
 
       }
 
-    private void saveData(){
+    private void saveData(int index){
         loadData();
         String type = "";
-        int price = Integer.parseInt((String) servicePrice.getText());
+        int price =serviceList.get(index).getServiceCost();
 
-        bHistory.add(new service(type, price));
-        SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
-        SharedPreferences.Editor editor = s.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(bHistory);
-        editor.putString("list", json);
-        editor.apply();
+      //  bHistory.add(new service(type, price));
+       // SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
+        //SharedPreferences.Editor editor = s.edit();
+        ///Gson gson = new Gson();
+        //String json = gson.toJson(bHistory);
+        //editor.putString("list", json);
+        //editor.apply();
 
-        DisplayToast("Booked!");
+        DisplayToast(price+"");
     }
 
     private void loadData(){

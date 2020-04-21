@@ -96,7 +96,7 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void saveData(){
-        loadData();
+            loadData();
         bHistory.add(new Visit(name, days, cost));
         SharedPreferences s = getSharedPreferences("VISITS", MODE_PRIVATE);
         SharedPreferences.Editor editor = s.edit();
@@ -108,17 +108,20 @@ public class BookingActivity extends AppCompatActivity {
         DisplayToast("Booked!");
     }
 
-    private void loadData(){
-        SharedPreferences s = getSharedPreferences("VISITS", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = s.getString("list", null);
-        Type type = new TypeToken<ArrayList<Visit>>() {}.getType();
-        ArrayList<Visit> load = gson.fromJson(json, type);
+        private void loadData(){
+            SharedPreferences s = getSharedPreferences("VISITS", MODE_PRIVATE);
+            Gson gson = new Gson();
+            String json = s.getString("list", null);
+            Type type = new TypeToken<ArrayList<Visit>>() {}.getType();
+            if (gson.fromJson(json,type)!=null) {
+                ArrayList<Visit> load = gson.fromJson(json, type);
+                if (load != null && load.isEmpty() != true) {
+                    bHistory = load;
+                    DisplayToast("test");
+                }
+            }
 
-        bHistory = load;
-
-
-    }
+        }
 
 
 }

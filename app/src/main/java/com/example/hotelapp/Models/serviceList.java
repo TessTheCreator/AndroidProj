@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class serviceList {
     ArrayList<service> service = new ArrayList<service>();
 
-    public serviceList(ArrayList<com.example.hotelapp.Models.service> service) {
+    public serviceList() {
         this.service = service;
     }
 

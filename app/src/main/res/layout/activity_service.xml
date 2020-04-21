@@ -46,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/spn_TypeServices"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="211dp"
         android:layout_toRightOf="@id/txt_TypeOfServices"
         android:onClick="order"
         android:text="Order" />

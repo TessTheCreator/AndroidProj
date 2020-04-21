@@ -3,6 +3,7 @@ package com.example.hotelapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,14 +13,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hotelapp.Models.Visit;
+import com.example.hotelapp.Models.VisitList;
 import com.example.hotelapp.Models.service;
 import com.example.hotelapp.Models.serviceList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 //This Class for Order New Service
 public class ServiceActivity extends AppCompatActivity {
+    serviceList b = new serviceList();
+    ArrayList<service> bHistory = b.getService();
+
     TextView servicePrice;
     List<service> serviceList;
     private Spinner typeOfServices;
@@ -55,7 +64,7 @@ public class ServiceActivity extends AppCompatActivity {
         service selectedService=serviceList.get(index);
         DisplayToast("Service ordered!");
           //save Data in Data Base..
-
+            saveData();
 
 
       }
@@ -80,10 +89,37 @@ public class ServiceActivity extends AppCompatActivity {
 
       }
 
+    private void saveData(){
+        loadData();
+        String type = "";
+        int price = Integer.parseInt((String) servicePrice.getText());
+
+        bHistory.add(new service(type, price));
+        SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
+        SharedPreferences.Editor editor = s.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(bHistory);
+        editor.putString("list", json);
+        editor.apply();
+
+        DisplayToast("Booked!");
+    }
+
+    private void loadData(){
+        SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = s.getString("list", null);
+        Type type = new TypeToken<ArrayList<service>>() {}.getType();
+        ArrayList<service> load = gson.fromJson(json, type);
+
+        bHistory = load;
+
+
+    }
+
     private void DisplayToast(String msg) {
         Toast.makeText(getBaseContext(), msg,
                 Toast.LENGTH_SHORT).show();
-
 
     }
 

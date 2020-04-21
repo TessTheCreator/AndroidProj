@@ -3,18 +3,29 @@ package com.example.hotelapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.hotelapp.Models.Visit;
+import com.example.hotelapp.Models.VisitList;
 import com.example.hotelapp.Models.service;
+import com.example.hotelapp.Models.serviceList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CheckIn_MainActivity extends AppCompatActivity {
+
+    serviceList b = new serviceList();
+    ArrayList<service> bHistory = b.getService();
 
     List<service> serviceList=new ArrayList<service>();
 
@@ -41,8 +52,18 @@ public class CheckIn_MainActivity extends AppCompatActivity {
           StringList[i]="Service: "+serviceList.get(i).getServiceType()+"       Cost: "+serviceList.get(i).getServiceCost();
       }
 
-
-
   }
+
+    private void loadData(){
+        SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = s.getString("list", null);
+        Type type = new TypeToken<ArrayList<service>>() {}.getType();
+        ArrayList<service> load = gson.fromJson(json, type);
+
+        bHistory = load;
+
+
+    }
 
 }

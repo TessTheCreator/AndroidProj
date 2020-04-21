@@ -3,6 +3,7 @@ package com.example.hotelapp.Models;
 import java.util.ArrayList;
 
 public class VisitList {
+
     ArrayList<Visit> visit = new ArrayList<Visit>();
 
     public VisitList() {

@@ -13,10 +13,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hotelapp.Models.VisitList;
+
 import org.w3c.dom.Text;
 
 public class BookingActivity extends AppCompatActivity {
     Button booking;
+    VisitList list=new VisitList();
+
     TextView hotelname;
     TextView totalPrice;
     EditText daysInput;
@@ -56,7 +60,7 @@ public class BookingActivity extends AppCompatActivity {
                 {
                     days = Integer.parseInt(daysInput.getText().toString());
                     cost = days * price;
-                    totalPrice.setText("Total Cost is price:" + cost);
+                    totalPrice.setText("Total Cost is:" + cost);
 
                 }
             }

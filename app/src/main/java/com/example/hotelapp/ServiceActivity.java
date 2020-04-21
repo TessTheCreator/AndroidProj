@@ -91,12 +91,12 @@ public class ServiceActivity extends AppCompatActivity {
       }
 
     private void saveData(int index){
-        loadData();
-        String type = "";
-        int price =serviceList.get(index).getServiceCost();
+            loadData();
+            String type =serviceList.get(index).getServiceType();
+            int price =serviceList.get(index).getServiceCost();
 
-      bHistory.add(new service(type, price));
-        SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
+          bHistory.add(new service(type, price));
+            SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
         SharedPreferences.Editor editor = s.edit();
         Gson gson = new Gson();
         String json = gson.toJson(bHistory);

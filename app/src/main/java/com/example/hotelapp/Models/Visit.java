@@ -44,11 +44,11 @@ public class Visit implements Serializable {
 
     @Override
     public String toString() {
-        return "Visit{" +
-                "hotelName='" + hotelName + '\'' +
-                ", cost=" + cost +
-                ", days=" + days +
-                '}';
+        return "" +
+                "hotel: '" + hotelName + '\'' +
+                ",   cost: " + cost +
+                ",   days: " + days +
+                ' ';
     }
 }
 

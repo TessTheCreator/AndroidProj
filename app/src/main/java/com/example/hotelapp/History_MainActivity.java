@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.hotelapp.Models.Visit;
 import com.example.hotelapp.Models.VisitList;
@@ -20,22 +21,23 @@ import java.util.ArrayList;
 
 
 public class History_MainActivity extends AppCompatActivity {
-  String []historyList={"Hotel0_Visit","Hotel1_Visit","Hotel2_Visit","Hotel3_Visit"};
+  //String []historyList={"Hotel0_Visit","Hotel1_Visit","Hotel2_Visit","Hotel3_Visit"};
 
     VisitList b = new VisitList();
-    ArrayList<Visit> bHistory = b.getVisit(); //////This array list contains all the visits and must be connected to adapter
+    ArrayList<Visit> bHistory = b.getVisit();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history__main);
 
-        loadData();
+        String[] visitList = getAllVisit();
 
         Intent intent =getIntent();
 
         ListView list_HistoryVisited =findViewById(R.id.list_HistoryVisited);
-        ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,historyList);
+        ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, visitList);
         list_HistoryVisited.setAdapter(listAdapter);//now you connected listView in runTime
 
         //Define Event Handler for this List
@@ -52,23 +54,37 @@ public class History_MainActivity extends AppCompatActivity {
     }
 
     private void loadData(){
-        SharedPreferences s = getSharedPreferences("booking", MODE_PRIVATE);
+        SharedPreferences s = getSharedPreferences("VISITS", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = s.getString("list", null);
-        Type type = new TypeToken<ArrayList<VisitList>>() {}.getType();
-        bHistory = gson.fromJson(json, type);
+        Type type = new TypeToken<ArrayList<Visit>>() {}.getType();
+        ArrayList<Visit> load = gson.fromJson(json, type);
 
-        if(bHistory == null){
-            bHistory = new ArrayList<>();
-        }
-        historyList=new String[bHistory.size()];
-        for(int i=0;i<historyList.length;i++){
+        bHistory = load;
 
-            historyList[i]=bHistory.get(i).getHotelName();
+
+        //Print(bHistory.toString());
+        //txt.setText(bHistory.toString());
+    }
+
+    public String[] getAllVisit(){
+        loadData();
+        //Print(b.toString());
+        int size = bHistory.size();
+        String[] v = new String[size];
+
+        for(int i = 0; i < size; i++){
+            v[i] = bHistory.get(i).toString();
+           // Print(b.getVisit().toString());
         }
+        return v;
+    }
+
+    private void Print(String msg) {
+        Toast.makeText(getBaseContext(), msg,
+                Toast.LENGTH_SHORT).show();
 
 
     }
-
 
 }

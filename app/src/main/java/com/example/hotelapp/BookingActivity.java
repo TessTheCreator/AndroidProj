@@ -88,11 +88,7 @@ public class BookingActivity extends AppCompatActivity {
     public void btnOnClickHotelSearchResult(View view) {
         if(days>0){
             //make it save into the database here
-
-
-
-
-
+            saveData();
         }
         else {
             DisplayToast("Please put a number of days!");
@@ -102,7 +98,7 @@ public class BookingActivity extends AppCompatActivity {
     private void saveData(){
         loadData();
         bHistory.add(new Visit(name, days, cost));
-        SharedPreferences s = getSharedPreferences("booking", MODE_PRIVATE);
+        SharedPreferences s = getSharedPreferences("VISITS", MODE_PRIVATE);
         SharedPreferences.Editor editor = s.edit();
         Gson gson = new Gson();
         String json = gson.toJson(bHistory);
@@ -113,7 +109,7 @@ public class BookingActivity extends AppCompatActivity {
     }
 
     private void loadData(){
-        SharedPreferences s = getSharedPreferences("booking", MODE_PRIVATE);
+        SharedPreferences s = getSharedPreferences("VISITS", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = s.getString("list", null);
         Type type = new TypeToken<ArrayList<Visit>>() {}.getType();

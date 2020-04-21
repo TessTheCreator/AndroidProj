@@ -25,15 +25,15 @@ TextView details;
 
 
         if(selected.getDays()>1) {
-            info = "You stayed at hotel:      " + selected.getHotelName() + "\n"
-                    + "For " + selected.getDays() + "Days\n" +
+            info = "You stayed at hotel:  " + selected.getHotelName() + "\n\n\r"
+                    + "For " + selected.getDays() + " Days\n\n\r" +
                     "And paid a total cost of: " + selected.getCost();
         }
         else
         {
             info = "You stayed at hotel:      " + selected.getHotelName() + "\n"
-                    + "For " + selected.getDays() + "Day \n" +
-                    "And paid a total cost of: " + selected.getCost();
+                    + "For " + selected.getDays() + " Day \n\n\r" +
+                    "And paid a total  of: " + selected.getCost();
         }
 
         details.setText(info);

@@ -1,6 +1,8 @@
 package com.example.hotelapp.Models;
 
-public class Visit {
+import java.io.Serializable;
+
+public class Visit implements Serializable {
     String hotelName;
     double cost;
     int days;

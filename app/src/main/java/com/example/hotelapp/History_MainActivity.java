@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 
 public class History_MainActivity extends AppCompatActivity {
-  String []DummyHotelOldViset={"Hotel0_Visit","Hotel1_Visit","Hotel2_Visit","Hotel3_Visit"};
+  String []historyList={"Hotel0_Visit","Hotel1_Visit","Hotel2_Visit","Hotel3_Visit"};
 
     VisitList b = new VisitList();
     ArrayList<Visit> bHistory = b.getVisit(); //////This array list contains all the visits and must be connected to adapter
@@ -33,8 +33,9 @@ public class History_MainActivity extends AppCompatActivity {
         loadData();
 
         Intent intent =getIntent();
+
         ListView list_HistoryVisited =findViewById(R.id.list_HistoryVisited);
-        ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,DummyHotelOldViset);
+        ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,historyList);
         list_HistoryVisited.setAdapter(listAdapter);//now you connected listView in runTime
 
         //Define Event Handler for this List
@@ -42,7 +43,7 @@ public class History_MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent =new Intent(History_MainActivity.this,HistorySummaryDetail.class);
-                intent.putExtra("HotelVisetFlow_id",(int)id);//or position Where your data array Object order
+             //   intent.putExtra("visit", bHistory.get(position));//or position Where your data array Object order
                 startActivity(intent);
             }
         };
@@ -60,6 +61,12 @@ public class History_MainActivity extends AppCompatActivity {
         if(bHistory == null){
             bHistory = new ArrayList<>();
         }
+        historyList=new String[bHistory.size()];
+        for(int i=0;i<historyList.length;i++){
+
+            historyList[i]=bHistory.get(i).getHotelName();
+        }
+
 
     }
 

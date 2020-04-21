@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class CheckIn_MainActivity extends AppCompatActivity {
+
+
    String DummyList[] ={"serves1","serves2","serves3"};
 
     @Override
@@ -25,4 +27,5 @@ public class CheckIn_MainActivity extends AppCompatActivity {
 
 
   }
+
 }

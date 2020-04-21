@@ -39,7 +39,28 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="186dp"
         android:layout_marginTop="154dp"
-        android:entries="@array/spn_TypeServices" />
+         />
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spn_TypeServices"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="400dp"
+        android:layout_toRightOf="@id/txt_TypeOfServices"
+        android:onClick="order"
+        android:text="Order" />
+
+    <TextView
+        android:id="@+id/servicePrice"
+        android:layout_below="@id/txt_TypeOfServices"
+        android:layout_marginTop="100dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price:" />
 
 
 </RelativeLayout>

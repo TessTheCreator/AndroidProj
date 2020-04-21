@@ -38,6 +38,8 @@ public class CheckIn_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in__main);
         Intent intent =getIntent();
+        loadData();
+        Fill();
         String Message1 =intent.getStringExtra("showList");
         if(!serviceList.isEmpty()) {
             ArrayAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, StringList);
@@ -62,7 +64,14 @@ public class CheckIn_MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = s.getString("list", null);
         Type type = new TypeToken<ArrayList<service>>() {}.getType();
-        ArrayList<service> load = gson.fromJson(json, type);
+        if (gson.fromJson(json,type)!=null) {
+            ArrayList<service> load = gson.fromJson(json, type);
+            if (load != null && load.isEmpty() != true) {
+                serviceList = load;
+
+            }
+        }
+
 
 
 

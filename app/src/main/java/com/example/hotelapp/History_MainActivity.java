@@ -63,9 +63,14 @@ public class History_MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = s.getString("list", null);
         Type type = new TypeToken<ArrayList<Visit>>() {}.getType();
-        ArrayList<Visit> load = gson.fromJson(json, type);
+        if (gson.fromJson(json,type)!=null) {
+            ArrayList<Visit> load = gson.fromJson(json, type);
+            if (load != null && load.isEmpty() != true) {
+                bHistory = load;
+            }
+        }
 
-        bHistory = load;
+
 
 
 

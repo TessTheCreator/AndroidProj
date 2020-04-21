@@ -95,15 +95,15 @@ public class ServiceActivity extends AppCompatActivity {
         String type = "";
         int price =serviceList.get(index).getServiceCost();
 
-      //  bHistory.add(new service(type, price));
-       // SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
-        //SharedPreferences.Editor editor = s.edit();
-        ///Gson gson = new Gson();
-        //String json = gson.toJson(bHistory);
-        //editor.putString("list", json);
-        //editor.apply();
+      bHistory.add(new service(type, price));
+        SharedPreferences s = getSharedPreferences("SERVICES", MODE_PRIVATE);
+        SharedPreferences.Editor editor = s.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(bHistory);
+        editor.putString("list", json);
+            editor.apply();
 
-        DisplayToast(price+"");
+        DisplayToast("Service ordered!");
     }
 
     private void loadData(){
@@ -111,9 +111,14 @@ public class ServiceActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = s.getString("list", null);
         Type type = new TypeToken<ArrayList<service>>() {}.getType();
-        ArrayList<service> load = gson.fromJson(json, type);
 
-        bHistory = load;
+        if (gson.fromJson(json,type)!=null) {
+            ArrayList<service> load = gson.fromJson(json, type);
+            if (load != null && load.isEmpty() != true) {
+                bHistory = load;
+            }
+        }
+
 
 
     }
